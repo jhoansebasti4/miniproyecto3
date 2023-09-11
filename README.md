@@ -1,6 +1,6 @@
 # Instrucciones
 
-Bienvenido al mini proyect del nivel 3. En este proyecto estaremos aplicando los conocimientos adquiridos a lo largo del nivel. Sigue las instrucciones de este archivo para completar el proyecto y ten en cuenta que estas mismas se tomarán en cuenta para la evaluación final del proyecto.
+Bienvenido al mini proyecto del nivel 3. En este proyecto estaremos aplicando los conocimientos adquiridos a lo largo del nivel. Sigue las instrucciones de este archivo para completar el proyecto y ten en cuenta que estas mismas se tomarán en cuenta para la evaluación final del proyecto.
 
 ## Instrucciones generales
 
@@ -73,11 +73,15 @@ A continuación te presentaremos los puntos que se tomarán en cuenta para la ca
     Phone: A tu elección
 ```
 
-- El archivo .sql en tu repositorio (base de datos exportada) debe tener el nombre que utilizaste originalmente para tu base de datos en tu programa (login_db). **Esta debes guardarla dentro de una carpeta que se llame "db_exportada"**.
+- El archivo .sql en tu repositorio (base de datos exportada) debe tener el nombre que utilizaste originalmente para tu base de datos en tu programa (login_db).
+- Debes guardar tu base de datos dentro de una carpeta que se llame `db_exportada`, en la carpeta raíz de tu proyecto.
 
 ```
-/db_exportada   --> Carpeta
-    login_db.sql   --> Base de datos exportada (dentro)
+/carpeta_raiz   --> Carpeta raíz de tu proyecto
+    /db_exportada   --> Carpeta
+        login_db.sql   --> Base de datos exportada (dentro)
+
+    ... resto de carpetas y archivos
 ```
 
 ### Contraseñas
