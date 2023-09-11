@@ -46,6 +46,8 @@ A continuación te presentaremos los puntos que se tomarán en cuenta para la ca
   Los colores, fuentes, tamaños de letra, etc. deben ser los proporcionados en el archivo Figma.
 - El proyecto debe ser estructurado de forma que sea fácil de entender y mantener (estructura de carpetas que represente órden).
 - El archivo `index.php` debe estar en la carpeta raíz del proyecto.
+- Debes proteger los archivos que muestran las vistas `Personal Info` y `Change Info` para que una persona que no ha iniciado sesión no pueda ingresar a estas vistas por medio de la URL sino hasta que inicie sesión.
+- Procura manejar los errores de la mejor manera posible. Recuerda que tu aplicación debe ser muy amigable e intuitiva con el usuario.
 
 ### Base de datos
 
