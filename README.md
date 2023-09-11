@@ -13,6 +13,15 @@ Para este proyecto debes crear una plataforma que permita:
 - Crear una nueva cuenta.
 - Iniciar sesión con una cuenta existente
 - Actualizar los datos de la cuenta con la que inicio sesión.
+  - Name
+  - Bio
+  - Phone
+  - Email
+  - Password
+
+## Carpeta `assets`
+
+En este repositorio te hemos dejado una carpeta con algunos archivos que te servirán para el diseño. Puedes descargarlos y usarlos en tu proyecto.
 
 ## Flujo del programa
 
@@ -30,13 +39,18 @@ Acción: Botón "Edit" -> Vista: Editar información
 
 A continuación te presentaremos los puntos que se tomarán en cuenta para la calificacion del proyecto:
 
+### Estructura y diseño
+
+- El proyecto debe ser desarrollado con puro PHP (HTML incluido), CSS y JAVASCRIPT.
 - El diseño debe ser lo más fiel posible al proporcionado en el archivo Figma.
   Los colores, fuentes, tamaños de letra, etc. deben ser los proporcionados en el archivo Figma.
 - El proyecto debe ser estructurado de forma que sea fácil de entender y mantener (estructura de carpetas que represente órden).
-- El proyecto debe estar en un repositorio en GitHub y el enlace debe ser enviado para su revisión.
-- Las contraeñas guardadas deben estar hasheadas o encriptadas con ``` password_hash() ```.
-- Al iniciar sesión, se debe corroborar si la contraseña encriptada de la base de datos coincide con la que el usuario ingresa. Se hace con ``` password_verify() ```.
-- La base de datos para tu proyecto debe llamarse ``` login_db ```.
+- El archivo `index.php` debe estar en la carpeta raíz del proyecto.
+
+### Base de datos
+
+- La base de datos para tu proyecto debe llamarse `login_db`.
+- Tu base de datos debe tener el collate: `utf8mb4_general_ci`.
 - En tu repositorio en GitHub debe estar tu base de datos exportada y esta debe tener los datos de **2 cuentas**. Recuerda que sí o sí debe tener estos datos.
 
 ```
@@ -64,7 +78,15 @@ A continuación te presentaremos los puntos que se tomarán en cuenta para la ca
     login_db.sql   --> Base de datos exportada (dentro)
 ```
 
+### Contraseñas
+
+- Las contraseñas de cada cuenta deben estar hasheadas o encriptadas con `password_hash()`.
+- Al iniciar sesión, se debe corroborar si la contraseña encriptada de la base de datos coincide con la que el usuario está intentando ingresar. Se hace con `password_verify()`.
+
+### Repositorio
+
 - El repositorio en GitHub debe tener más de un commit.
+- El link del repositorio debe ser enviado para su revisión.
 - Si existiesen requerimientos extras que se hayan realizado (de la lista de consideraciones opcionales o de tu propia iniciativa), debes dejar una nota en el archivo README.md de tu repositorio en GitHub que especifique uno a uno.
 
 ## Consideraciones OPCIONALES que suman puntos:
