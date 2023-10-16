@@ -1,0 +1,149 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.registration-view {
+    width: 1000px;
+    height: 1000px;
+    top: 38px;
+    left: -1000px;
+    border-radius: 12px;
+    
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.arrow-icon {
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px; /* Added margin for separation */
+}
+h1{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 49px;
+    letter-spacing: -0.035em;
+    font-family: Noto Sans;
+}
+#bilynap{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+    font-family: Noto Sans;
+}
+h2{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: -0.035em;
+    font-family: Noto Sans;
+
+}
+#some{
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    font-family: Noto Sans;
+    color: #828282;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 600px; /* Ancho deseado para el contenedor */
+    height:auto; /* Altura deseada para el contenedor */
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #E0E0E0;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    background-color: #fff; /* Color de fondo si es necesario */
+}
+
+hr {
+    border: 0; /* Quitamos el borde para que no haya espacios entre líneas */
+    border-top: 1px solid #E0E0E0; /* Creamos una línea con el color deseado */
+    width: 200% 200%; /* Ocupa todo el ancho disponible */
+    margin: 20px -3%; /* Agregamos un espacio entre los elementos hr (vertical) */
+}
+
+
+.button-edit {
+    width: 95.34px;
+    height: 38px;
+    top: 267.11px;
+    left: 998.77px;
+    border-radius: 12px;
+    border: 1px;
+    border: 1px solid #828282;
+    color: #828282;
+    
+}
+
+.button-edit:hover {
+    background-color: #2a2a2a;
+    color: #828282;
+}
+
+
+.info-section {
+    flex-grow: 1; /* Hace que ocupe todo el espacio vertical disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Added margin for separation */
+}
+
+.title-info {
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    text-align: left;
+    color: #BDBDBD;
+    margin: 0; /* Remove default margin */
+}
+
+.title-info2 {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    text-align: center;
+    color: #000; /* Adjust color as needed */
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Permite que "Space for photo" ocupe el espacio restante */
+}
+

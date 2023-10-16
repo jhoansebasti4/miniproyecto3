@@ -1,0 +1,154 @@
+/* Estilos generales */
+body {
+    font-family:  sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container-grande {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-card {
+    background-color:white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.logo-text {
+    width: 40%; /* Tamaño de la imagen del logo */
+    height: auto;
+}
+
+
+.card-text {
+    margin-top: 10px;
+}
+
+#tex1{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+    text-align: left;
+    color: #333333;
+
+}
+#tex2{
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.035em;
+    text-align: left;    
+}
+#tex3{
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -0.035em;
+    text-align: left;
+    color: #828282; 
+    text-align: center;
+
+}
+#tex4{
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -0.035em;
+    text-align: center;
+    color: #828282; 
+    
+}
+
+/* Estilos para la sección de entrada */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Ancho según sea necesario */
+}
+
+/* Estilos para cada caja de entrada con imagen */
+.input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre las cajas */
+}
+
+/* Estilos para la imagen dentro de la caja de entrada */
+.input-box img {
+    position: absolute;
+    left: 0; /* Posición de la imagen a la izquierda */
+    height: 20px; /* Altura fija para la imagen */
+    width: 20px; /* Ancho fijo para la imagen */
+    padding: 0 10px; /* Espacio entre la imagen y el texto del campo */
+ 
+}
+.lockmail{
+    filter:#828282;
+}
+
+/* Estilos para el campo de entrada */
+.input-box input {
+    padding: 10px 20px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    padding-left: 40px; /* Espacio para la imagen y un poco de margen */
+    width: 100%; /* Ancho del botón al 100% */
+}
+
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; /* Ancho del botón al 100% */
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.social-profiles {
+    display: flex;
+    flex-direction: column; /* Cambiado a 'column' para disposición vertical */
+    align-items: center;
+}
+
+.images-container {
+    display: flex;
+    flex-direction: row; /* Disposición horizontal */
+}
+
+.images-container img {
+    width: 45px; /* Tamaño de las imágenes de las redes sociales */
+    margin-left: 10px; /* Espaciado entre las imágenes */
+}
+
+.login-text {
+    margin-top: 10px;
+}
+
+.login-text a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
