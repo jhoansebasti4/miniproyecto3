@@ -1,3 +1,4 @@
+register.php
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -32,22 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Contraseña inválida
             echo "<script>alert('Contraseña incorrecta.');</script>";
         }
-    } else {
-        // El usuario no está registrado
-        // Insertar el nuevo usuario
-        $insert_query = "INSERT INTO usuarios (email, password) VALUES ('$email', '$hashed_password')";
-        if ($conn->query($insert_query) === TRUE) {
-            // Registro exitoso, iniciar sesión
-            session_start();
-            $_SESSION['user_id'] = $conn->insert_id; // Obtener el ID del usuario insertado
-            $_SESSION['user_email'] = $email;
-            header("Location: ../user/personal_info.php");
-            exit();
-        } else {
-            echo "Error al registrar el usuario: " . $conn->error;
-        }
     }
-
     $conn->close();
 }
 ?>
@@ -70,24 +56,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="../assets/devchallenges.svg" alt="Logo">
         </div>
         <div class="card-text">
-            <p id="tex1">Unete a miles de estudiantes de todo el mundo</p>
-            <p id="tex2">Domina el desarrollo web haciendo proyectos reales. Hay múltiples caminos para que elijas.</p>
+            <p id="tex1">Join thousands of students from around the world</p>
+            <p id="tex2">Master web development by doing real projects. There are multiple paths for you to choose from.</p>
         </div>
         <div class="input-section">
             <form method="POST" action="register.php">
                 <div class="input-box">
-                    <img class="lockmail" src="../assets/mail.svg" alt="Correo">
-                    <input name="email" type="email" placeholder="Correo electrónico">
+                    <img class="lockmail" src="../assets/mail.svg" alt="email">
+                    <input name="email" type="email" placeholder="email">
                 </div>
 
                 <div class="input-box">
-                    <img class="lockmail" src="../assets/lock.svg" alt="Contraseña">
-                    <input name="password" type="password" placeholder="Contraseña">
+                    <img class="lockmail" src="../assets/lock.svg" alt="password">
+                    <input name="password" type="password" placeholder="password">
                 </div>
-                <button type="submit">Empieza a programar ahora</button>
+                <button type="submit">Star coding now</button>
             </form>
             <div class="social-profiles">
-                <p id="tex3">O continua con estos perfiles sociales</p>
+                <p id="tex3">Or continue with these social profiles</p>
                 <div class="images-container">
                     <img src="../assets/Google.svg" alt="Red social 1">
                     <img src="../assets/Facebook.svg" alt="Red social 2">
@@ -95,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <img src="../assets/Gihub.svg" alt="Red social 4">
                 </div>
                 <div class="login-text">
-                    <p>¿Ya eres miembro? <a href='/auth/login.php'>Iniciar sesión</a></p>
+                    <p>Already a member? <a href='/auth/login.php'>Login</a></p>
                 </div>
             </div>
         </div>

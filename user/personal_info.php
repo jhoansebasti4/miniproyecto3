@@ -28,15 +28,15 @@ $userInfo = getUserInfo($_SESSION['user_id']);
             <img src="../assets/devchallenges.svg" alt="Logo">
         </div>
         <div class="user-profile">
-            <img src="" alt="Foto Usuario">
-            <p><?php echo isset($userInfo['name']) ? $userInfo['name'] : 'Name not found'; ?></p>
+            <img src="<?= isset($userInfo['photo']) ? $userInfo['photo'] : 'ruta_a_la_foto_por_defecto.jpg'; ?>" alt="Foto de usuario">
+            <p><?= isset($userInfo['name']) ? $userInfo['name'] : 'Name not found'; ?></p>
             <span class="arrow-icon"></span>
             <div class="form-floating">
-                <select id="menuSelect">
-                    <option value="1">My profile</option>
-                    <option value="2">Group Chat</option>
-                    <option value="3">Logout</option>
-                </select>
+            <select id="menuSelect">
+            <option value="1" data-url="/user/personal_info.php">My profile</option>
+            <option value="2" data-url="">Group Chat</option>
+            <option value="3" data-url="/auth/logout.php">Logout</option>
+            </select>
             </div>
         </div>
     </div>
@@ -54,55 +54,91 @@ $userInfo = getUserInfo($_SESSION['user_id']);
                     <p id="some">Some info may be visible to other people</p>
                 </div>
                 <div class="butt">
-                    <button class="button-edit">Edit</button>
+                <button class="button-edit" onclick="redirectToEdit()">Edit</button>
                 </div>
             </div>
+           
             <hr>
+            
+            <!-- Datos del usuario en una tabla -->
+            <table class="info-section" id="infoSection">
+                <div class="info-row">
+                    <div class="title-info">PHOTO</div>
+                    <div class="info-cell">
+                        <img class="user-photo" src="<?= isset($userInfo['photo']) ? $userInfo['photo'] : 'ruta_a_la_foto_por_defecto.jpg'; ?>" alt="Foto de usuario">
+                    </div>
+                </div>
+                <hr>
+                <div class="info-row">
+                    <div class="title-info">NAME</div>
+                    <div class="title-info2"><?= isset($userInfo['name']) ? $userInfo['name'] : 'Name not found'; ?></div>
+                </div>
+                <hr>
+                <div class="info-row">
+                    <div class="title-info">BIO</div>
+                    <div class="title-info2"><?= isset($userInfo['bio']) ? $userInfo['bio'] : 'Bio not found'; ?></div>
+                </div>
+                <hr>
+                <div class="info-row">
+                    <div class="title-info">PHONE</div>
+                    <div class="title-info2"><?= isset($userInfo['phone']) ? $userInfo['phone'] : 'Phone not found'; ?></div>
+                </div>
+                <hr>
+                <div class="info-row">
+                    <div class="title-info">EMAIL</div>
+                    <div class="title-info2"><?= isset($userInfo['email']) ? $userInfo['email'] : 'Email not found'; ?></div>
+                </div>
+                <hr>
+                <div class="info-row">
+                    <div class="title-info">PASSWORD</div>
+                    <div class="title-info2">********</div>
+                </div>
+            </table>
+            
 
-            <div class="info-row">
-                <p class="title-info">PHOTO</p>
-                <img src="<?php echo isset($userInfo['photo']) ? $userInfo['photo'] : 'ruta_a_la_foto_por_defecto.jpg'; ?>" alt="Foto de usuario">
-            </div>
-            <hr>
-
-            <div class="info-row">
-                <p class="title-info">NAME</p>
-                <p class="title-info2"><?php echo isset($userInfo['name']) ? $userInfo['name'] : 'Name not found'; ?></p>
-            </div>
-            <hr>
-
-            <div class="info-row">
-                <p class="title-info">BIO</p>
-                <p class="title-info2"><?php echo isset($userInfo['bio']) ? $userInfo['bio'] : 'Bio not found'; ?></p>
-            </div>
-            <hr>
-
-            <div class="info-row">
-                <p class="title-info">PHONE</p>
-                <p class="title-info2"><?php echo isset($userInfo['phone']) ? $userInfo['phone'] : 'Phone not found'; ?></p>
-            </div>
-            <hr>
-
-            <div class="info-row">
-                <p class="title-info">EMAIL</p>
-                <p class="title-info2"><?php echo isset($userInfo['email']) ? $userInfo['email'] : 'Email not found'; ?></p>
-            </div>
-            <hr>
-
-            <div class="info-row">
-                <p class="title-info">PASSWORD</p>
-                <p class="title-info2">********</p>
-            </div>
-            <hr>
         </div>
     </div>
 </div>
-<script>
-    document.getElementById('menuSelect').addEventListener('change', function () {
-        const selectedValue = this.value;
 
-        if (selectedValue === '3') {
-            window.location.href = '../auth/register.php';
+<script>
+    function redirectToEdit() {
+        window.location.href = '../user/edit_info.php';
+    }
+
+    document.getElementById('menuSelect').addEventListener('change', function () {
+        var selectedOption = this.options[this.selectedIndex];
+        var redirectUrl = selectedOption.getAttribute('data-url');
+
+        console.log("Redirecting to:", redirectUrl);
+
+        if (redirectUrl) {
+            if (selectedOption.value === '3') {
+ 
+                window.location.href = redirectUrl;
+            } else {
+                window.location.href = redirectUrl;
+            }
+        }
+    });
+
+    document.getElementById('backButton').addEventListener('click', function () {
+        window.location.href = '/user/personal_info.php';
+    });
+
+    document.getElementById('fileInput').addEventListener('change', function (e) {
+        const fileInput = e.target;
+        const label = fileInput.nextElementSibling;
+        const img = label.querySelector('.fileInput');
+
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                img.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
         }
     });
 </script>

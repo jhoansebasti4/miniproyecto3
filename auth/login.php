@@ -13,8 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $sql->get_result();
 
     if ($result->num_rows === 1) {
+        // El usuario está registrado, verificar la contraseña
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
+            // Contraseña válida, iniciar sesión
             session_start();
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_email'] = $row['email'];
@@ -25,7 +27,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Contraseña incorrecta.";
         }
     } else {
-        echo "Usuario no registrado.";
+        // El usuario no está registrado, registrar automáticamente
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+        $insert_query = "INSERT INTO usuarios (email, password) VALUES ('$email', '$hashed_password')";
+        if ($conn->query($insert_query) === TRUE) {
+            // Registro exitoso, iniciar sesión
+            session_start();
+            $_SESSION['user_id'] = $conn->insert_id; // Obtener el ID del usuario insertado
+            $_SESSION['user_email'] = $email;
+            header("Location: ../user/personal_info.php");
+            exit();
+        } else {
+            echo "Error al registrar el usuario: " . $conn->error;
+        }
     }
 
     $conn->close();
@@ -76,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img src="../assets/Gihub.svg" alt="Red social 4">
                 </div>
                 <div class="login-text">
-                 <p>Don't have an account yet? <a href='/user/edit_info.php'>register</a></p>
+                 <p>Don't have an account yet? <a>register</a></p>
                </div>
                  </div>
             
@@ -86,4 +101,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </body>
 </html>
-

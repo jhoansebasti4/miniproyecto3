@@ -7,12 +7,11 @@ body {
 
 .registration-view {
     width: 1000px;
-    height: 1000px;
-    top: 38px;
-    left: -1000px;
+    height: auto;
     border-radius: 12px;
-    
-
+    margin: 50px auto; /* Centrar en la página */
+    background-color: #fff;
+    padding: 20px; /* Agregado para separar del borde */
 }
 
 .header {
@@ -40,32 +39,35 @@ body {
 
 .title {
     text-align: center;
-    margin-bottom: 20px; /* Added margin for separation */
+    margin-bottom: 20px;
 }
-h1{
-    text-align: center;
+
+h1 {
     font-size: 36px;
     font-weight: 400;
     line-height: 49px;
     letter-spacing: -0.035em;
     font-family: Noto Sans;
+    margin: 0; /* Ajuste para eliminar el margen predeterminado */
 }
-#bilynap{
+
+#bilynap {
     font-size: 18px;
     font-weight: 300;
     line-height: 25px;
     letter-spacing: -0.035em;
     font-family: Noto Sans;
 }
-h2{
+
+h2 {
     font-size: 24px;
     font-weight: 400;
     line-height: 33px;
     letter-spacing: -0.035em;
     font-family: Noto Sans;
-
 }
-#some{
+
+#some {
     font-size: 13px;
     font-weight: 500;
     line-height: 18px;
@@ -75,75 +77,151 @@ h2{
 }
 
 .main-content {
+    max-width: 845.91px;
+    height: 827.56px;
+    top: 150px;
+    left: 296.57px;
+    border-radius: 12px;
+    border:  1px solid rgba(224, 224, 224, 1);
     display: flex;
     flex-direction: column;
-    width: 600px; /* Ancho deseado para el contenedor */
-    height:auto; /* Altura deseada para el contenedor */
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #E0E0E0;
-    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
-    background-color: #fff; /* Color de fondo si es necesario */
+    margin: 0 auto;
+    padding: 40px; /* Agregado margen interno */ 
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho y alto */
 }
-
-hr {
-    border: 0; /* Quitamos el borde para que no haya espacios entre líneas */
-    border-top: 1px solid #E0E0E0; /* Creamos una línea con el color deseado */
-    width: 200% 200%; /* Ocupa todo el ancho disponible */
-    margin: 20px -3%; /* Agregamos un espacio entre los elementos hr (vertical) */
-}
-
 
 .button-edit {
     width: 95.34px;
     height: 38px;
-    top: 267.11px;
+    margin-top: 10px;
     left: 998.77px;
     border-radius: 12px;
-    border: 1px;
-    border: 1px solid #828282;
-    color: #828282;
-    
+    border: 1px #fff;
+    color: #fff;
+    background-color: #3498db;
+
 }
 
 .button-edit:hover {
-    background-color: #2a2a2a;
-    color: #828282;
+    background-color: #fff;
+    color: #3498db;
+    border: 1px #3498db;
 }
 
-
 .info-section {
-    flex-grow: 1; /* Hace que ocupe todo el espacio vertical disponible */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
+
+
 .info-row {
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px; /* Added margin for separation */
+    margin-bottom: 20px;
+    padding: 10px; /* Espaciado interno para separar el contenido del borde */
+}
+        
+        
+        /* Estilos para la imagen de perfil */
+ img.user-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    position: absolute;
+    top: 73%;
+    left: 615px;
+  
+}
+.fileInput {
+    Width:72px;
+    Height:72px;
+    Top:263.55px;
+    Left:345.22px;
+    border-radius:8px;
 }
 
 .title-info {
+    color: #BDBDBD;
+    margin: 0;
+    width: 43px;
+    height: 18px;
     font-family: Noto Sans;
     font-size: 13px;
     font-weight: 500;
     line-height: 18px;
     letter-spacing: -0.035em;
     text-align: left;
-    color: #BDBDBD;
-    margin: 0; /* Remove default margin */
 }
 
 .title-info2 {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 18px;
+    width: 112px;
+    height: 25px;
+    font-family: Noto Sans;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
     letter-spacing: -0.035em;
-    text-align: center;
-    color: #000; /* Adjust color as needed */
-    margin: 0; /* Remove default margin */
-    flex-grow: 1; /* Permite que "Space for photo" ocupe el espacio restante */
+    color: #000;
+    display: flex;
+    align-items: end;
+    margin: auto;
+}
+hr {
+    top: 443.8px;
+    left: 297.31px;
+    border: 0; /* Quitamos el borde para que no haya espacios entre líneas */
+    background-color: rgba(224, 224, 224, 1); /* Cambiamos a background-color */
+    height: 1px; /* Añadimos altura para asegurarnos de que sea visible */
+    width: 200% 200%; /* Ocupa todo el ancho disponible */
+    margin: 20px -2.5%; /* Agregamos un espacio entre los elementos hr (vertical) */
+}
+.editinfo{
+    width: 416.93px;
+    height: 73.83px;
+    top: 603.47px;
+    left: 343.5px;
+    border-radius: 12px;
+    border:1px solid rgba(130, 130, 130, 1) ;
+    color: rgba(130, 130, 130, 1);
 }
 
+#change{
+    width: 97px;
+    height: 18px;
+    top: 288.55px;
+    left: 444.72px;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    text-align: left;
+    color: rgba(130, 130, 130, 1);
+
+}
+
+.back {
+    object-position: 25%;
+    width: auto;
+    height: 40px;
+    top: 0px;
+    left: 40px; /* Ajusta este valor según tus necesidades */
+    position: relative;
+}
+
+
+#backButton{
+    height: 25px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+    color: #3498db;
+    border: none;
+    background: none;
+    
+}
